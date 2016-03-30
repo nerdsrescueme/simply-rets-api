@@ -1,0 +1,23 @@
+{
+    "name": "nrm/simply-rets-client",
+    "description": "Simply RETS PHP client built with Guzzle",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "NRM\\SimplyRetsClient\\": "src/"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "~6.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Frank Bardon Jr.",
+            "email": "frankbardon@gmail.com"
+        }
+    ]
+}
