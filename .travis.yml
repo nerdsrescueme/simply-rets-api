@@ -10,3 +10,5 @@ sudo: false
 
 install:
     - composer install
+
+script: vendor/bin/phpunit
