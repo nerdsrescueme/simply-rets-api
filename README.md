@@ -5,6 +5,9 @@ The SimplyRETS API client is a PHP library which provides simplified access to
 the [SimplyRETS API](https://docs.simplyrets.com/api/index.html) and the data
 it returns.
 
+> This plugin is currently in development with no stable release. Stay tuned for
+> an actual release soon.
+
 Requirements
 ------------
 

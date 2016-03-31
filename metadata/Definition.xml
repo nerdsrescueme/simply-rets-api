@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+  <class name="NRM\SimplyRetsClient\Model\Definition" exclusion-policy="ALL">
+    <property name="expiresAt" serialized-name="expires"  expose="true">
+      <type><![CDATA[DateTime<'Y-m-d\TH:i:s.u\Z'>]]></type>
+    </property>
+    <property name="vendors" expose="true">
+      <type><![CDATA[array<string>]]></type>
+    </property>
+    <property name="updates" expose="true">
+      <type><![CDATA[array<string>]]></type>
+    </property>
+    <property name="endpoints" expose="true">
+      <type><![CDATA[array<string>]]></type>
+    </property>
+    <property name="accepts" expose="true">
+      <type><![CDATA[array<string>]]></type>
+    </property>
+  </class>
+</serializer>

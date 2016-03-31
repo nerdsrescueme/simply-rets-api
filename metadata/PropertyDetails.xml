@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+  <class name="NRM\SimplyRetsClient\Model\PropertyDetails" exclusion-policy="ALL">
+    <property name="roofType" serialized-name="roof" type="string" expose="true" />
+    <property name="coolingType" serialized-name="cooling" type="string" expose="true" />
+    <property name="style" serialized-name="style" type="string" expose="true" />
+    <property name="area" serialized-name="area" type="integer" expose="true" />
+    <property name="fullBathCount" serialized-name="bathsFull" type="integer" expose="true" />
+    <property name="halfBathCount" serialized-name="bathsHalf" type="integer" expose="true" />
+    <property name="storyCount" serialized-name="stories" type="integer" expose="true" />
+    <property name="fireplaceCount" serialized-name="fireplaces" type="integer" expose="true" />
+    <property name="flooring" serialized-name="flooring" type="string" expose="true" />
+    <property name="heating" serialized-name="heating" type="string" expose="true" />
+    <property name="bathroomCount" serialized-name="bathrooms" type="integer" />
+    <property name="foundationType" serialized-name="foundation" type="string" expose="true" />
+    <property name="laundryFeatures" serialized-name="laundryFeatures" type="string" expose="true" access-type="public_method" accessor-setter="setLaundryFeaturesFromString" />
+    <property name="occupantName" serialized-name="occupantName" type="string" expose="true" />
+    <property name="lotDescription" serialized-name="lotDescription" type="string" expose="true" />
+    <property name="subType" serialized-name="subType" type="string" expose="true" />
+    <property name="bedroomCount" serialized-name="bedrooms" type="integer" expose="true" />
+    <property name="interiorFeatures" serialized-name="interiorFeatures" type="string" expose="true" access-type="public_method" accessor-setter="setInteriorFeaturesFromString" />
+    <property name="lotSize" serialized-name="lotSize" type="string" expose="true" />
+    <property name="areaSource" serialized-name="areaSource" type="string" expose="true" />
+    <property name="additionalRooms" serialized-name="additionalRooms" type="string" expose="true" access-type="public_method" accessor-setter="setAdditionalRoomsFromString" />
+    <property name="exteriorFeatures" serialized-name="exteriorFeatures" type="string" expose="true" access-type="public_method" accessor-setter="setExteriorFeaturesFromString" />
+    <property name="waterSource" serialized-name="water" type="string" expose="true" />
+    <property name="view" serialized-name="view" type="string" expose="true" />
+    <property name="subdivision" serialized-name="subdivision" type="string" expose="true" />
+    <property name="constructionTypes" serialized-name="construction" type="string" expose="true" access-type="public_method" accessor-setter="setConstructionTypeFromString" />
+    <property name="type" serialized-name="type" type="string" expose="true" />
+    <property name="accessibility" serialized-name="accessibility" type="string" expose="true" />
+    <property name="occupantType" serialized-name="occupantType" type="string" expose="true" />
+    <property name="yearBuilt" serialized-name="yearBuilt" type="integer" expose="true" />
+    <property name="garageSpaceCount" serialized-name="garageSpaces" type="integer" expose="true" />
+  </class>
+</serializer>
