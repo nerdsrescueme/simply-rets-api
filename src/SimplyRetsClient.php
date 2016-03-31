@@ -4,6 +4,8 @@ namespace NRM\SimplyRetsClient;
 
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception\GuzzleException;
+use JMS\Serializer\SerializerInterface;
+use JMS\Serializer\SerializerBuilder;
 
 /**
  * Simply RETS API client
@@ -20,6 +22,28 @@ class SimplyRetsClient
     private $client;
 
     /**
+     * Are we in debug mode?
+     *
+     * @var boolean
+     */
+    private $debug;
+
+    /**
+     * JMS Serializer
+     *
+     * @var SerializerInterface
+     */
+    private $serializer;
+
+    /**
+     * JMS Serializer cache directory
+     *
+     * @var string
+     */
+    private $serializerCacheDirectory;
+
+
+    /**
      * Constructor
      *
      * @param string $username
@@ -27,8 +51,13 @@ class SimplyRetsClient
      * @param boolean $debug
      * @param array $config
      */
-    public function __construct($username, $password, $debug = false, array $config = array())
-    {
+    public function __construct(
+        $username,
+        $password,
+        array $config = array(),
+        $serializerCacheDirectory = null,
+        $debug = false
+    ) {
         $config = array_merge_recursive($this->getDefaultConfig(), $config);
         $config['auth'] = array($username, $password);
 
@@ -36,6 +65,8 @@ class SimplyRetsClient
             $config['debug'] = true;
         }
 
+        $this->debug = $debug;
+        $this->serializerCacheDirectory = $serializerCacheDirectory ?: sys_get_temp_dir();
         $this->client = new GuzzleClient($config);
     }
 
@@ -46,8 +77,9 @@ class SimplyRetsClient
     {
         try {
             $response = $this->client->request('OPTIONS', '/');
+            $serializer = $this->getSerializer();
 
-            return json_decode($response->getBody());
+            return $serializer->deserialize($response->getBody(), 'NRM\SimplyRetsClient\Model\Definition', 'json');
         } catch (GuzzleException $exception) {
             return json_decode($exception->getResponse()->getBody());
         }
@@ -69,6 +101,19 @@ class SimplyRetsClient
         } catch (GuzzleException $exception) {
             return json_decode($exception->getResponse()->getBody());
         }
+    }
+
+    public function getSerializer()
+    {
+        if (null === $this->serializer) {
+            $this->serializer = SerializerBuilder::create()
+                ->setCacheDir($this->serializerCacheDirectory)
+                ->addMetadataDir(realpath(__DIR__.'/../metadata'))
+                ->setDebug($this->debug)
+                ->build();
+        }
+
+        return $this->serializer;
     }
 
     /**
