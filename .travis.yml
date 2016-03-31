@@ -8,5 +8,13 @@ php:
 
 sudo: false
 
+git:
+    depth: 1
+
 install:
-    - composer install
+    - composer install --prefer-dist
+
+cache:
+    - $HOME/.composer/cache
+
+script: vendor/bin/phpunit
