@@ -3,6 +3,7 @@
 namespace NRM\SimplyRetsClient\Model;
 
 use DateTime;
+use Serializable;
 
 /**
  * Definition model
@@ -106,5 +107,33 @@ class Definition
     public function getAccepts()
     {
         return $this->accepts;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function serialize()
+    {
+        return serialize(array(
+            $this->expiresAt,
+            $this->vendors,
+            $this->updates,
+            $this->endpoints,
+            $this->accepts,
+        ));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function deserialize($serialized)
+    {
+        list(
+            $this->expiresAt,
+            $this->vendors,
+            $this->updates,
+            $this->endpoints,
+            $this->accepts
+        ) = unserialize($serialized);
     }
 }

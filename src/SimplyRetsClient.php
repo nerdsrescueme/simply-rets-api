@@ -70,6 +70,11 @@ class SimplyRetsClient
         $this->client = new GuzzleClient($config);
     }
 
+    public function getGuzzleClient()
+    {
+        return $this->client;
+    }
+
     /**
      * Get definition data from the base API endpoint
      */
