@@ -8,5 +8,10 @@ php:
 
 sudo: false
 
+git:
+    depth: 1
+
 install:
     - composer install
+
+script: vendor/bin/phpunit
