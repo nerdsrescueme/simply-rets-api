@@ -15,11 +15,6 @@
             "NRM\\SimplyRetsClient\\": "src/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "NRM\\SimplyRetsClient\\Stub\\": "stub/"
-        }
-    },
     "require": {
         "php": ">=5.6",
         "guzzlehttp/guzzle": "~6.2",
