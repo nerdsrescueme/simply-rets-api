@@ -10,8 +10,9 @@ namespace NRM\SimplyRetsClient;
 class PropertiesParameterSet extends PropertyParameterSet implements PropertiesParameterSetInterface
 {
     protected $query;
-    protected $statuses = self::STATUS_NONE;
-    protected $types = self::TYPE_NONE;
+    protected $statuses = array();
+    protected $types = array();
+    protected $agentId;
     protected $brokers = array();
     protected $minPrice;
     protected $maxPrice;
@@ -57,10 +58,6 @@ class PropertiesParameterSet extends PropertyParameterSet implements PropertiesP
             return $this->clearStatuses();
         }
 
-        if (!is_array($this->statuses)) {
-            $this->statuses = array();
-        }
-
         $this->statuses[] = $status;
         $this->statuses = array_unique($this->statuses);
 
@@ -94,10 +91,6 @@ class PropertiesParameterSet extends PropertyParameterSet implements PropertiesP
     {
         if (self::TYPE_NONE === $type) {
             return $this->clearTypes();
-        }
-
-        if (!is_array($this->types)) {
-            $this->types = array();
         }
 
         $this->types[] = $type;
