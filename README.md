@@ -17,7 +17,8 @@ Requirements
 Documentation
 -------------
 
-(Provide a link to the documentation)
+For information on how to utilize the various components provided by this
+library please read [the documentation](docs/index.md).
 
 Installation
 ------------
@@ -41,7 +42,6 @@ Quick Start
 To use the SimplyRETS API client, you will need your username and password.
 
 ```php
-
 use NRM\SimplyRetsClient\SimplyRetsClient;
 use NRM\SimplyRetsClient\PropertiesParameterSet as Params;
 
@@ -51,7 +51,31 @@ $password = '<password>';
 $client = new SimplyRetsClient($username, $password);
 $params = Params::create()->addType(Params::TYPE_RENTAL);
 $properties = $client->getProperties($params);
+```
 
+Contributing
+------------
+
+If there is anything you believe to be missing or an error, please send a pull
+request with your changes. I'd really appreciate the help! Please make sure to
+include working unit tests, and that any changes you make have been tested and
+do not break current features.
+
+Testing
+-------
+
+We hope to remain at 100% unit test coverage for the entire lifespan of this
+project; lofty goal, for sure, but doable. To run the test suite first install
+the library then run the following command from the root folder of the project:
+
+```bash
+$ ./vendor/bin/phpunit
+```
+
+Or, if you already have phpunit installed globally this will do:
+
+```bash
+$ phpunit
 ```
 
 Thanks
@@ -59,3 +83,5 @@ Thanks
 
 - [SimplyRETS](http://simplyrets.com) - API creator
 - [GuzzleHTTP](http://docs.guzzlephp.org) - Base client library
+- [JMS Serializer](http://jmsyst.com/libs/serializer) - JSON deserializer
+- [PHPUnit](https://phpunit.de/) - PHP testing framework
