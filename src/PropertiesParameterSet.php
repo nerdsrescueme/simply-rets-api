@@ -74,7 +74,7 @@ class PropertiesParameterSet extends PropertyParameterSet implements PropertiesP
      */
     protected function clearStatuses()
     {
-        $this->statuses = self::STATUS_NONE;
+        $this->statuses = array();
 
         return $this;
     }
@@ -113,7 +113,7 @@ class PropertiesParameterSet extends PropertyParameterSet implements PropertiesP
      */
     protected function clearTypes()
     {
-        $this->types = self::TYPE_NONE;
+        $this->types = array();
 
         return $this;
     }
@@ -481,11 +481,11 @@ class PropertiesParameterSet extends PropertyParameterSet implements PropertiesP
             $array['q'] = $this->query;
         }
 
-        if (is_array($this->statuses) && !empty($this->statuses)) {
+        if (!empty($this->statuses)) {
             $array['status'] = $this->statuses;
         }
 
-        if (is_array($this->types) && !empty($this->types)) {
+        if (!empty($this->types)) {
             $array['type'] = $this->types;
         }
 
