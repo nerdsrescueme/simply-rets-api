@@ -29,27 +29,27 @@ abstract class ClientTestCase extends PHPUnit_Framework_TestCase
         );
     }
 
-    public function getClientConfig()
+    protected function getClientConfig()
     {
         return array();
     }
 
-    public function getData($file)
+    protected function getData($file)
     {
         return file_get_contents(__DIR__.'/data/'. $file . '.json');
     }
 
-    public function mockHandler()
+    protected function mockHandler()
     {
         return new MockHandler(func_get_args());
     }
 
-    public function mockResponse($statusCode, array $headers = array(), $body = null)
+    protected function mockResponse($statusCode, array $headers = array(), $body = null)
     {
         return new Response($statusCode, $headers, $body);
     }
 
-    public function mockRequestException($message, $statusCode, array $headers = array(), $body = null)
+    protected function mockRequestException($message, $statusCode, array $headers = array(), $body = null)
     {
         return new RequestException(
             $message,

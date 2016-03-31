@@ -39,7 +39,7 @@ class DefinitionTests extends ClientTestCase
         ));
     }
 
-    public function getClientConfig()
+    protected function getClientConfig()
     {
         $goodJson = $this->getData('definition');
 
