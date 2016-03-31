@@ -20,13 +20,6 @@ class SimplyRetsClient
     private $client;
 
     /**
-     * JMS serializer
-     *
-     * @var Serializer
-     */
-    private $serializer;
-
-    /**
      * Constructor
      *
      * @param string $username
