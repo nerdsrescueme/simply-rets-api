@@ -1,5 +1,5 @@
 {
-    "name": "nrm/simply-rets-client",
+    "name": "nrm/simplyrets-client",
     "description": "Simply RETS PHP client built with Guzzle",
     "keywords": ["rets", "simplyrets", "real estate"],
     "type": "library",
@@ -17,7 +17,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "NRM\\SimplyRetsClient\\Stub": "stub/"
+            "NRM\\SimplyRetsClient\\Stub\\": "stub/"
         }
     },
     "require": {
