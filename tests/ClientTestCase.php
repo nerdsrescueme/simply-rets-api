@@ -23,15 +23,10 @@ abstract class ClientTestCase extends PHPUnit_Framework_TestCase
         return new SimplyRetsClient(
             SIMPLYRETS_USERNAME,
             SIMPLYRETS_PASSWORD,
-            empty($config) ? $this->getClientConfig() : $config,
+            $config,
             $serializerCacheDirectory,
             $debug
         );
-    }
-
-    protected function getClientConfig()
-    {
-        return array();
     }
 
     protected function getData($file)
@@ -49,7 +44,7 @@ abstract class ClientTestCase extends PHPUnit_Framework_TestCase
         return new Response($statusCode, $headers, $body);
     }
 
-    protected function mockRequestException($message, $statusCode, array $headers = array(), $body = null)
+    protected function mockException($message, $statusCode, array $headers = array(), $body = null)
     {
         return new RequestException(
             $message,

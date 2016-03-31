@@ -75,11 +75,15 @@ class SimplyRetsClient
      */
     public function getDefinition()
     {
-        $response = $this->client->request('OPTIONS', '/');
-        $serializer = $this->getSerializer();
-        $definition = $serializer->deserialize($response->getBody(), 'NRM\SimplyRetsClient\Model\Definition', 'json');
+        try {
+            $response = $this->client->request('OPTIONS', '/');
+            $serializer = $this->getSerializer();
+            $definition = $serializer->deserialize($response->getBody(), 'NRM\SimplyRetsClient\Model\Definition', 'json');
 
-        return $definition->getExpiresAt() ? $definition : null;
+            return $definition->getExpiresAt() ? $definition : null;
+        } catch (GuzzleException $exception) {}
+
+        return;
     }
 
     public function getProperty($mlsId, PropertyParameterSetInterface $parameters = null)
