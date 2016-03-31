@@ -29,13 +29,23 @@ class DefinitionTests extends ClientTestCase
         $this->markTestSkipped('We have to handle exceptions with a real response');
     }
 
-    public function getConfig()
+    public function testDefinitionReturnedWithBadCredentials()
     {
-        $definitionJson = file_get_contents(__DIR__.'/definition.json');
+        $json = $this->getData('definition-bad-auth');
+        $client = $this->createClient(array(
+            'handler' => $this->mockHandler(
+                $this->mockResponse(200, array(), $json)
+            )
+        ));
+    }
+
+    public function getClientConfig()
+    {
+        $goodJson = $this->getData('definition');
 
         return array(
             'handler' => $this->mockHandler(
-                $this->mockResponse(200, array(), $definitionJson),
+                $this->mockResponse(200, array(), $goodJson),
                 $this->mockRequestException('Bad Request', 400, array(), 'Get body from API')
             )
         );

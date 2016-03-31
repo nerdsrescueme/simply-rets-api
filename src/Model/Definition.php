@@ -65,7 +65,7 @@ class Definition
      */
     public function getExpiresAt()
     {
-        return $this->expiry;
+        return $this->expiresAt;
     }
 
     /**
