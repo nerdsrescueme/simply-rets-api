@@ -171,6 +171,9 @@ class SimplyRetsClient
             'base_uri' => 'https://api.simplyrets.com',
             'connect_timeout' => 2,
             'timeout' => 4,
+            'headers' => array(
+                'Accept' => 'application/json'
+            )
         );
     }
 }
