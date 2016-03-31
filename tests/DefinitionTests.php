@@ -68,7 +68,7 @@ class DefinitionTests extends ClientTestCase
         return array(
             'handler' => $this->mockHandler(
                 $this->mockResponse(200, array(), $goodJson),
-                $this->mockException('Bad Request', 400, array(), 'Get body from API')
+                $this->mockRequestException('Bad Request', 400, array(), 'Get body from API')
             )
         );
     }

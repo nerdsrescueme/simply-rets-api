@@ -88,16 +88,12 @@ class SimplyRetsClient
 
     public function getProperty($mlsId, PropertyParameterSetInterface $parameters = null)
     {
-        list($url, $opts) = $this->prepareRequest(sprintf('/properties/%s', (string) $mlsId));
+        list($url, $opts) = $this->prepareRequest(sprintf('/properties/%s', (string) $mlsId), $parameters);
 
-        try {
-            $response = $this->client->request('GET', $url, $opts);
-            $serializer = $this->getSerializer();
+        $response = $this->client->request('GET', $url, $opts);
+        $serializer = $this->getSerializer();
 
-            return $serializer->deserialize($response->getBody(), 'NRM\SimplyRetsClient\Model\Listing', 'json');
-        } catch (GuzzleException $exception) {
-            return json_decode($exception->getResponse()->getBody());
-        }
+        return $serializer->deserialize($response->getBody(), 'NRM\SimplyRetsClient\Model\Listing', 'json');
     }
 
     /**
