@@ -128,6 +128,7 @@ class PropertyDetails
         if (!empty($string)) {
             $this->laundryFeatures = array_merge($this->laundryFeatures, explode(',', $string));
             $this->laundryFeatures = array_unique($this->laundryFeatures);
+            $this->laundryFeatures = array_map('trim', $this->laundryFeatures);
         }
 
         return $this;
@@ -163,6 +164,7 @@ class PropertyDetails
         if (!empty($string)) {
             $this->interiorFeatures = array_merge($this->interiorFeatures, explode(',', $string));
             $this->interiorFeatures = array_unique($this->interiorFeatures);
+            $this->interiorFeatures = array_map('trim', $this->interiorFeatures);
         }
 
         return $this;
@@ -188,6 +190,7 @@ class PropertyDetails
         if (!empty($string)) {
             $this->additionalRooms = array_merge($this->additionalRooms, explode(',', $string));
             $this->additionalRooms = array_unique($this->additionalRooms);
+            $this->additionalRooms = array_map('trim', $this->additionalRooms);
         }
 
         return $this;
@@ -203,6 +206,7 @@ class PropertyDetails
         if (!empty($string)) {
             $this->exteriorFeatures = array_merge($this->exteriorFeatures, explode(',', $string));
             $this->exteriorFeatures = array_unique($this->exteriorFeatures);
+            $this->exteriorFeatures = array_map('trim', $this->exteriorFeatures);
         }
 
         return $this;
@@ -233,6 +237,7 @@ class PropertyDetails
         if (!empty($string)) {
             $this->constructionTypes = array_merge($this->constructionTypes, explode(',', $string));
             $this->constructionTypes = array_unique($this->constructionTypes);
+            $this->constructionTypes = array_map('trim', $this->constructionTypes);
         }
 
         return $this;
