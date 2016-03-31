@@ -276,18 +276,38 @@ class PropertiesParameterSetTests extends ClientTestCase
 
     public function testPointCoordinates()
     {
-        $latA = 1;
-        $lonA = 1;
-        $latB = 3;
-        $lonB = 4;
-
         $params = PropertiesParameterSet::create();
 
         $this->assertArrayNotHasKey('points', $params->toArray());
 
-        $params->setPointCoordinates($latA, $lonA, $latB, $lonB);
+        $params->setPointCoordinates(1, 1, 1, 1);
         $this->assertCount(4, $params->getPointCoordinates());
         $this->assertArrayHasKey('points', $params->toArray());
+    }
+
+    public function testPointCoordinatesCoherence()
+    {
+        $latA = 1;
+        $lonA = 2;
+        $latB = 3;
+        $lonB = 4;
+
+        $params = PropertiesParameterSet::create();
+        $params->setPointCoordinates($latA, $lonA, $latB, $lonB);
+
+        $expected = sprintf(
+            '?points=%d,%d&points=%d,%d&points=%d,%d&points=%d,%d',
+            $latA,
+            $lonA,
+            $latB,
+            $lonA,
+            $latB,
+            $lonB,
+            $latA,
+            $lonB
+        );
+
+        $this->assertSame($expected, $params->toQueryString());
     }
 
     public function testSoryBy()
