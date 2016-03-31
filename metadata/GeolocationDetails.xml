@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+  <class name="NRM\SimplyRetsClient\Model\GeolocationDetails" exclusion-policy="ALL">
+    <property name="county" serialized-name="county" type="string" expose="true" />
+    <property name="latitude" serialized-name="lat" type="double" expose="true" />
+    <property name="longitude" serialized-name="longitude" type="double" expose="true" />
+    <property name="area" serialized-name="marketArea" type="string" expose="true" />
+    <property name="directions" seralized-name="directions" type="string" expose="true" />
+  </class>
+</serializer>

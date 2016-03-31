@@ -8,7 +8,7 @@ namespace NRM\SimplyRetsClient;
  * @todo Add features from API.
  * @author Frank Bardon Jr. <frankbardon@gmail.com>
  */
-interface PropertiesParameterSetInterface extends ParameterSetInterface
+interface PropertiesParameterSetInterface extends PropertyParameterSetInterface
 {
     /**
      * Listing statuses
@@ -34,20 +34,6 @@ interface PropertiesParameterSetInterface extends ParameterSetInterface
     const TYPE_CONDOMINIUM = 'condomimium';
     const TYPE_COMMERCIAL = 'commercial';
     const TYPE_LAND = 'land';
-
-    /**
-     * Listing extra fields
-     */
-    const EXTRA_NONE = null;
-    const EXTRA_ASSOCIATION = 'association';
-    const EXTRA_AGREEMENT = 'agreement';
-    const EXTRA_GARAGE_SPACES = 'garageSpaces';
-    const EXTRA_MAINTENANCE_EXPENSE = 'maintenanceExpense';
-    const EXTRA_PARKING = 'parking';
-    const EXTRA_POOL = 'pool';
-    const EXTRA_ROOMS = 'rooms';
-    const EXTRA_TAX_YEAR = 'taxYear';
-    const EXTRA_TAX_ANNUAL_AMOUNT = 'taxAnnualAmount';
 
     /**
      * Listing sort criteria
@@ -398,21 +384,6 @@ interface PropertiesParameterSetInterface extends ParameterSetInterface
      * @return array
      */
     public function getPointCoordinates();
-
-    /**
-     * Add extra field
-     *
-     * @param string $extraField
-     * @return self
-     */
-    public function addExtraField($extraField);
-
-    /**
-     * Get extra fields
-     *
-     * @return array
-     */
-    public function getExtraFields();
 
     /**
      * Set listing sort

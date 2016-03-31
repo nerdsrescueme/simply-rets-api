@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+  <class name="NRM\SimplyRetsClient\Model\MlsDetails" exclusion-policy="ALL">
+    <property name="status" serialized-name="status" type="string" expose="true" />
+    <property name="area" serialized-name="area" type="string" expose="true" />
+    <property name="daysOnMarket" serialized-name="daysOnMarket" type="string" expose="true" />
+  </class>
+</serializer>

@@ -7,29 +7,28 @@ namespace NRM\SimplyRetsClient;
  *
  * @author Frank Bardon Jr. <frankbardon@gmail.com>
  */
-class PropertiesParameterSet extends AbstractParameterSet implements PropertiesParameterSetInterface
+class PropertiesParameterSet extends PropertyParameterSet implements PropertiesParameterSetInterface
 {
-    private $query;
-    private $statuses = self::STATUS_NONE;
-    private $types = self::TYPE_NONE;
-    private $brokers = array();
-    private $minPrice;
-    private $maxPrice;
-    private $minArea;
-    private $maxArea;
-    private $minBaths;
-    private $maxBaths;
-    private $minBeds;
-    private $maxBeds;
-    private $maxDaysOnMarket;
-    private $minYearBuilt;
-    private $offset;
-    private $limit;
-    private $postalCodes = array();
-    private $waterfrontOnly = false;
-    private $pointCoordinates;
-    private $extraFields = array();
-    private $sortBy;
+    protected $query;
+    protected $statuses = self::STATUS_NONE;
+    protected $types = self::TYPE_NONE;
+    protected $brokers = array();
+    protected $minPrice;
+    protected $maxPrice;
+    protected $minArea;
+    protected $maxArea;
+    protected $minBaths;
+    protected $maxBaths;
+    protected $minBeds;
+    protected $maxBeds;
+    protected $maxDaysOnMarket;
+    protected $minYearBuilt;
+    protected $offset;
+    protected $limit;
+    protected $postalCodes = array();
+    protected $waterfrontOnly = false;
+    protected $pointCoordinates;
+    protected $sortBy;
 
     /**
      * {@inheritdoc}
@@ -73,7 +72,7 @@ class PropertiesParameterSet extends AbstractParameterSet implements PropertiesP
      *
      * @return self
      */
-    public function clearStatuses()
+    protected function clearStatuses()
     {
         $this->statuses = self::STATUS_NONE;
 
@@ -112,7 +111,7 @@ class PropertiesParameterSet extends AbstractParameterSet implements PropertiesP
      *
      * @return self
      */
-    public function clearTypes()
+    protected function clearTypes()
     {
         $this->types = self::TYPE_NONE;
 
@@ -456,41 +455,6 @@ class PropertiesParameterSet extends AbstractParameterSet implements PropertiesP
     /**
      * {@inheritdoc}
      */
-    public function addExtraField($extraField)
-    {
-        if (self::EXTRA_NONE === $extraField) {
-            return $this->clearExtraFields();
-        }
-
-        $this->extraFields[] = $extraField;
-        $this->extraFields = array_unique($this->extraFields);
-
-        return $this;
-    }
-
-    /**
-     * Clear extra fields array
-     *
-     * @return self
-     */
-    public function clearExtraFields()
-    {
-        $this->extraFields = array();
-
-        return $this;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getExtraFields()
-    {
-        return $this->extraFields;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function setSortBy($sortBy)
     {
         $this->sortBy = $sortBy;
@@ -511,7 +475,7 @@ class PropertiesParameterSet extends AbstractParameterSet implements PropertiesP
      */
     public function toArray()
     {
-        $array = array();
+        $array = parent::toArray();
 
         if ($this->query) {
             $array['q'] = $this->query;
@@ -601,10 +565,6 @@ class PropertiesParameterSet extends AbstractParameterSet implements PropertiesP
                 "{$c[2]},{$c[3]}",
                 "{$c[0]},{$c[3]}",
             );
-        }
-
-        if (!empty($this->extraFields)) {
-            $array['include'] = $this->extraFields;
         }
 
         if (!empty($this->sortBy)) {

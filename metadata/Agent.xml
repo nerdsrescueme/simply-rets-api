@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+  <class name="NRM\SimplyRetsClient\Model\Agent" exclusion-policy="ALL">
+    <property name="id" seralized-name="id" type="string" expose="true" />
+    <property name="firstName" serialized-name="firstName" type="string" expose="true" />
+    <property name="lastName" serialized-name="lastName" type="string" expose="true" />
+    <property name="contact" serialized-name="contact" expose="true">
+      <type><![CDATA[array<string,string>]]></type>
+    </property>
+  </class>
+</serializer>

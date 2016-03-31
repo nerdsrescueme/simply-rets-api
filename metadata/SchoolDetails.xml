@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+  <class name="NRM\SimplyRetsClient\Model\SchoolDetails" exclusion-policy="ALL">
+    <property name="middleSchool" serialized-name="middleSchool" type="string" expose="true" />
+    <property name="highSchool" serialized-name="highSchool" type="string" expose="true" />
+    <property name="elementarySchool" serialized-name="elementarySchool" type="string" expose="true" />
+    <property name="district" serialized-name="district" type="string" expose="true" />
+  </class>
+</serializer>

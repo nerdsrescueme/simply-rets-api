@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+  <class name="NRM\SimplyRetsClient\Model\Listing" exclusion-policy="ALL">
+    <property name="privateRemarks" serialized-name="privateRemarks" type="string" expose="true" />
+    <property name="propertyDetails" serialized-name="property" type="NRM\SimplyRetsClient\Model\PropertyDetails" expose="true" />
+    <property name="mlsId" serialized-name="mlsId" type="integer" expose="true" />
+    <property name="mlsDetails" serialized-name="mls" type="NRM\SimplyRetsClient\Model\MlsDetails" expose="true" />
+    <property name="geolocationDetails" serialized-name="geo" type="NRM\SimplyRetsClient\Model\GeolocationDetails" expose="true" />
+    <property name="terms" serialized-name="terms" type="string" expose="true" />
+    <property name="showingInstructions" serialized-name="showingInstructions" type="string" expose="true" />
+    <property name="leaseTerm" serialized-name="leaseTerm" type="string" expose="true" />
+    <property name="disclaimer" serialized-name="disclaimer" type="string" expose="true" />
+    <property name="listDate" serialized-name="listDate" expose="true"><type><![CDATA[DateTime<'Y-m-d\TH:i:s.u\Z'>]]></type></property>
+    <property name="agent" serialized-name="agent" type="NRM\SimplyRetsClient\Model\Agent" expose="true" />
+    <property name="modifiedAt" serialized-name="modified" expose="true"><type><![CDATA[DateTime<'Y-m-d\TH:i:s.u\Z'>]]></type></property>
+    <property name="schoolDetails" serialized-name="school" type="NRM\SimplyRetsClient\Model\SchoolDetails" expose="true" />
+    <property name="photos" serialized-name="photos" expose="true"><type><![CDATA[array<string>]]></type></property>
+    <property name="listPrice" serialized-name="listPrice" type="integer" expose="true" />
+    <property name="leaseType" serialized-name="leaseType" type="string" expose="true" />
+    <property name="remarks" serialized-name="remarks" type="string" expose="true" />
+  </class>
+</serializer>

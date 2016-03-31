@@ -85,6 +85,20 @@ class SimplyRetsClient
         }
     }
 
+    public function getProperty($mlsId, PropertyParameterSetInterface $parameters = null)
+    {
+        list($url, $opts) = $this->prepareRequest(sprintf('/properties/%s', (string) $mlsId));
+
+        try {
+            $response = $this->client->request('GET', $url, $opts);
+            $serializer = $this->getSerializer();
+
+            return $serializer->deserialize($response->getBody(), 'NRM\SimplyRetsClient\Model\Listing', 'json');
+        } catch (GuzzleException $exception) {
+            return json_decode($exception->getResponse()->getBody());
+        }
+    }
+
     /**
      * Get properties
      *
@@ -95,9 +109,12 @@ class SimplyRetsClient
         list($url, $opts) = $this->prepareRequest('/properties', $parameters);
 
         try {
-            $response = $this->client->request('GET', $url, $opts);
+            //$response = $this->client->request('GET', $url, $opts);
+            $serializer = $this->getSerializer();
+            $json = file_get_contents(__DIR__.'/../properties.json');
+            die($json);
 
-            return json_decode($response->getBody());
+            return $serializer->deserialize($json, 'array<NRM\SimplyRetsClient\Model\Listing>', 'json');
         } catch (GuzzleException $exception) {
             return json_decode($exception->getResponse()->getBody());
         }
@@ -106,11 +123,16 @@ class SimplyRetsClient
     public function getSerializer()
     {
         if (null === $this->serializer) {
-            $this->serializer = SerializerBuilder::create()
-                ->setCacheDir($this->serializerCacheDirectory)
-                ->addMetadataDir(realpath(__DIR__.'/../metadata'))
-                ->setDebug($this->debug)
-                ->build();
+            $serializer = SerializerBuilder::create()
+                ->addMetadataDir(realpath(__DIR__.'/../metadata'), 'NRM\\SimplyRetsClient\\Model')
+                ->setDebug($this->debug);
+
+            // Only cache when not debugging.
+            if (!$this->debug) {
+                $serializer->setCacheDir($this->serializerCacheDirectory);
+            }
+
+            $this->serializer = $serializer->build();
         }
 
         return $this->serializer;
