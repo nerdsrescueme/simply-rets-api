@@ -1,8 +1,8 @@
 SimplyRETS API client
 ======================
 
-[![Build Status](https://travis-ci.org/nerdsrescueme/simply-rets-api.svg?branch=master)](https://travis-ci.org/nerdsrescueme/simply-rets-api)
-[![Build Status](https://travis-ci.org/nerdsrescueme/simply-rets-api.svg?branch=1.0)](https://travis-ci.org/nerdsrescueme/simply-rets-api)
+- [![Build Status](https://travis-ci.org/nerdsrescueme/simply-rets-api.svg?branch=master)](https://travis-ci.org/nerdsrescueme/simply-rets-api) master
+- [![Build Status](https://travis-ci.org/nerdsrescueme/simply-rets-api.svg?branch=1.0)](https://travis-ci.org/nerdsrescueme/simply-rets-api) 1.0
 
 The SimplyRETS API client is a PHP library which provides simplified access to
 the [SimplyRETS API](https://docs.simplyrets.com/api/index.html) and the data
