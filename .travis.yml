@@ -8,6 +8,10 @@ php:
 
 sudo: false
 
+branches:
+    - master
+    - 1.0
+
 git:
     depth: 1
 
