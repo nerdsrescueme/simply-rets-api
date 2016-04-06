@@ -34,23 +34,8 @@ $definition = $client->getDefinition();
 Using the definition object
 ---------------------------
 
-The definition object gives you access to the following methods:
-
-### getExpiresAt(): `DateTime`
-Returns the date, on which, the definition object will expire.
-
-### getVendors(): `array`
-Returns an array containing the vendors registered to your account. This is
-useful when working with multiple feeds at once.
-
-### getUpdates(): `array`
-Write doc.
-
-### getEndpoints(): `array`
-Write doc.
-
-### getAccepts(): `array`
-Write doc.
+The property object structure and hierarchy can be found in the API docs for
+the [Definition object](docs/api/class-NRM.SimplyRetsClient.Model.Definition.html).
 
 Caching the definition object
 -----------------------------

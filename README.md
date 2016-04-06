@@ -21,7 +21,8 @@ Documentation
 -------------
 
 For information on how to utilize the various components provided by this
-library please read [the documentation](docs/index.md).
+library please read [the documentation](docs/index.md). Full API documentation
+can also be found in [the docs/api](docs/api/index.html) folder.
 
 Installation
 ------------
