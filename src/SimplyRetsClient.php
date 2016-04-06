@@ -4,8 +4,10 @@ namespace NRM\SimplyRetsClient;
 
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\ClientInterface;
 use JMS\Serializer\SerializerInterface;
 use JMS\Serializer\SerializerBuilder;
+use NRM\SimplyRetsClient\Model\Listing;
 
 /**
  * Simply RETS API client
@@ -70,13 +72,21 @@ class SimplyRetsClient
         $this->client = new GuzzleClient($config);
     }
 
+    /**
+     * Get base Guzzle client
+     *
+     * @return ClientInterface
+     */
     public function getGuzzleClient()
     {
         return $this->client;
     }
 
     /**
-     * Get definition data from the base API endpoint
+     * Get definition object if it is not expired
+     *
+     * @throws GuzzleException when request fails for any reason
+     * @return Definition|null
      */
     public function getDefinition()
     {
@@ -86,11 +96,33 @@ class SimplyRetsClient
             $definition = $serializer->deserialize($response->getBody(), 'NRM\SimplyRetsClient\Model\Definition', 'json');
 
             return $definition->getExpiresAt() ? $definition : null;
-        } catch (GuzzleException $exception) {}
-
-        return;
+        } catch (GuzzleException $e) {}
     }
 
+    /**
+     * Get raw definition JSON
+     *
+     * @throws GuzzleException when request fails for any reason
+     * @return string
+     */
+    public function getRawDefinition()
+    {
+        try {
+            $response = $this->client->request('OPTIONS', '/');
+
+            return $response->getBody();
+        } catch (GuzzleException $e) {}
+    }
+
+    /**
+     * Get property object
+     *
+     * @throws GuzzleException when request fails for any reason
+     *
+     * @param string|integer $mlsId
+     * @param PropertyParameterSetInterface|null $parameters
+     * @return Listing
+     */
     public function getProperty($mlsId, PropertyParameterSetInterface $parameters = null)
     {
         list($url, $opts) = $this->prepareRequest(sprintf('/properties/%s', (string) $mlsId), $parameters);
@@ -102,26 +134,61 @@ class SimplyRetsClient
     }
 
     /**
-     * Get properties
+     * Get raw property JSON string
      *
-     * @param PropertiesParameterSetInterface $parameters
+     * @throws GuzzleException when request fails for any reason
+     *
+     * @param string|integer $mlsId
+     * @param PropertyParameterSetInterface|null $parameters
+     * @return string
+     */
+    public function getRawProperty($mlsId, PropertyParameterSetInterface $parameters = null)
+    {
+        list($url, $opts) = $this->prepareRequest(sprintf('/properties/%s', (string) $mlsId), $parameters);
+        $response = $this->client->request('GET', $url, $opts);
+
+        return $response->getBody();
+    }
+
+    /**
+     * Get property object array
+     *
+     * @throws GuzzleException when request fails for any reason
+     *
+     * @param PropertiesParameterSetInterface|null $parameters
+     * @return Listing[]
      */
     public function getProperties(PropertiesParameterSetInterface $parameters = null)
     {
         list($url, $opts) = $this->prepareRequest('/properties', $parameters);
 
-        try {
-            //$response = $this->client->request('GET', $url, $opts);
-            $serializer = $this->getSerializer();
-            $json = file_get_contents(__DIR__.'/../properties.json');
-            die($json);
+        $response = $this->client->request('GET', $url, $opts);
+        $serializer = $this->getSerializer();
 
-            return $serializer->deserialize($json, 'array<NRM\SimplyRetsClient\Model\Listing>', 'json');
-        } catch (GuzzleException $exception) {
-            return json_decode($exception->getResponse()->getBody());
-        }
+        return $serializer->deserialize($response->getBody(), 'array<NRM\SimplyRetsClient\Model\Listing>', 'json');
     }
 
+    /**
+     * Get raw properties JSON string
+     *
+     * @throws GuzzleException when request fails for any reason
+     *
+     * @param PropertiesParameterSetInterface|null $parameters
+     * @return string
+     */
+    public function getRawProperties(PropertiesParameterSetInterface $parameters = null)
+    {
+        list($url, $opts) = $this->prepareRequest('/properties', $parameters);
+        $response = $this->client->request('GET', $url, $opts);
+
+        return $response->getBody();
+    }
+
+    /**
+     * Get or create JMS serializer
+     *
+     * @return SerializerInterface
+     */
     public function getSerializer()
     {
         if (null === $this->serializer) {

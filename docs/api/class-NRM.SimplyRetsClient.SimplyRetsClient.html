@@ -127,7 +127,7 @@
 
 				<b>Author:</b>
 				Frank Bardon Jr. <a href="&#x6d;&#x61;&#105;&#108;t&#x6f;&#x3a;&#102;&#114;&#97;&#x6e;&#x6b;&#98;&#97;&#114;&#x64;&#x6f;&#x6e;&#64;&#103;m&#x61;&#x69;&#108;&#46;c&#x6f;&#x6d;">&#102;&#114;&#97;&#x6e;&#x6b;&#98;&#97;&#114;&#x64;&#x6f;&#x6e;&#64;&#103;m&#x61;&#x69;&#108;&#46;c&#x6f;&#x6d;</a><br>
-			<b>Located at</b> <a href="source-class-NRM.SimplyRetsClient.SimplyRetsClient.html#10-181" title="Go to source code">SimplyRetsClient.php</a>
+			<b>Located at</b> <a href="source-class-NRM.SimplyRetsClient.SimplyRetsClient.html#12-244" title="Go to source code">SimplyRetsClient.php</a>
 		<br>
 	</div>
 
@@ -147,7 +147,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-NRM.SimplyRetsClient.SimplyRetsClient.html#46-71" title="Go to source code">__construct</a>( <span>string <var>$username</var></span>, <span>string <var>$password</var></span>, <span>array <var>$config</var> = <span class="php-keyword1">array</span>()</span>, <span>array <var>$serializerCacheDirectory</var> = <span class="php-keyword1">null</span></span>, <span> <var>$debug</var> = <span class="php-keyword1">false</span> </span> )</code>
+		<code><a href="source-class-NRM.SimplyRetsClient.SimplyRetsClient.html#48-73" title="Go to source code">__construct</a>( <span>string <var>$username</var></span>, <span>string <var>$password</var></span>, <span>array <var>$config</var> = <span class="php-keyword1">array</span>()</span>, <span>array <var>$serializerCacheDirectory</var> = <span class="php-keyword1">null</span></span>, <span> <var>$debug</var> = <span class="php-keyword1">false</span> </span> )</code>
 
 		<div class="description short">
 			<p>Constructor</p>
@@ -183,24 +183,28 @@
 		<td class="attributes"><code>
 			 public 
 
-			
+			GuzzleHttp\ClientInterface
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getGuzzleClient">#</a>
-		<code><a href="source-class-NRM.SimplyRetsClient.SimplyRetsClient.html#73-76" title="Go to source code">getGuzzleClient</a>( )</code>
+		<code><a href="source-class-NRM.SimplyRetsClient.SimplyRetsClient.html#75-83" title="Go to source code">getGuzzleClient</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Get base Guzzle client</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Get base Guzzle client</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					GuzzleHttp\ClientInterface
+				</div>
 
 
 
@@ -213,25 +217,71 @@
 		<td class="attributes"><code>
 			 public 
 
-			
+			Definition|null
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getDefinition">#</a>
-		<code><a href="source-class-NRM.SimplyRetsClient.SimplyRetsClient.html#78-92" title="Go to source code">getDefinition</a>( )</code>
+		<code><a href="source-class-NRM.SimplyRetsClient.SimplyRetsClient.html#85-98" title="Go to source code">getDefinition</a>( )</code>
 
 		<div class="description short">
-			<p>Get definition data from the base API endpoint</p>
+			<p>Get definition object if it is not expired</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Get definition data from the base API endpoint</p>
+			<p>Get definition object if it is not expired</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					Definition|null
+				</div>
 
+				<h4>Throws</h4>
+				<div class="list">
+					GuzzleHttp\Exception\GuzzleException<br>when request fails for any reason
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getRawDefinition" id="_getRawDefinition">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getRawDefinition">#</a>
+		<code><a href="source-class-NRM.SimplyRetsClient.SimplyRetsClient.html#100-111" title="Go to source code">getRawDefinition</a>( )</code>
+
+		<div class="description short">
+			<p>Get raw definition JSON</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get raw definition JSON</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					GuzzleHttp\Exception\GuzzleException<br>when request fails for any reason
+				</div>
 
 
 
@@ -243,25 +293,85 @@
 		<td class="attributes"><code>
 			 public 
 
-			
+			<code><a href="class-NRM.SimplyRetsClient.Model.Listing.html">NRM\SimplyRetsClient\Model\Listing</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getProperty">#</a>
-		<code><a href="source-class-NRM.SimplyRetsClient.SimplyRetsClient.html#94-102" title="Go to source code">getProperty</a>( <span> <var>$mlsId</var></span>, <span><code><a href="class-NRM.SimplyRetsClient.PropertyParameterSetInterface.html">NRM\SimplyRetsClient\PropertyParameterSetInterface</a></code> <var>$parameters</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-NRM.SimplyRetsClient.SimplyRetsClient.html#113-130" title="Go to source code">getProperty</a>( <span>string|integer <var>$mlsId</var></span>, <span><code><a href="class-NRM.SimplyRetsClient.PropertyParameterSetInterface.html">NRM\SimplyRetsClient\PropertyParameterSetInterface</a></code> <var>$parameters</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
-			
+			<p>Get property object</p>
 		</div>
 
 		<div class="description detailed hidden">
+			<p>Get property object</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$mlsId</var></dt>
+					<dd></dd>
+					<dt><var>$parameters</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-NRM.SimplyRetsClient.Model.Listing.html">NRM\SimplyRetsClient\Model\Listing</a></code>
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					GuzzleHttp\Exception\GuzzleException<br>when request fails for any reason
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getRawProperty" id="_getRawProperty">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
 			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getRawProperty">#</a>
+		<code><a href="source-class-NRM.SimplyRetsClient.SimplyRetsClient.html#132-147" title="Go to source code">getRawProperty</a>( <span>string|integer <var>$mlsId</var></span>, <span><code><a href="class-NRM.SimplyRetsClient.PropertyParameterSetInterface.html">NRM\SimplyRetsClient\PropertyParameterSetInterface</a></code> <var>$parameters</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Get raw property JSON string</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get raw property JSON string</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$mlsId</var></dt>
+					<dd></dd>
+					<dt><var>$parameters</var></dt>
+					<dd></dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
 
+				<h4>Throws</h4>
+				<div class="list">
+					GuzzleHttp\Exception\GuzzleException<br>when request fails for any reason
+				</div>
 
 
 
@@ -273,21 +383,21 @@
 		<td class="attributes"><code>
 			 public 
 
-			
+			<code><a href="class-NRM.SimplyRetsClient.Model.Listing.html">NRM\SimplyRetsClient\Model\Listing</a>[]</code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getProperties">#</a>
-		<code><a href="source-class-NRM.SimplyRetsClient.SimplyRetsClient.html#104-123" title="Go to source code">getProperties</a>( <span><code><a href="class-NRM.SimplyRetsClient.PropertiesParameterSetInterface.html">NRM\SimplyRetsClient\PropertiesParameterSetInterface</a></code> <var>$parameters</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-NRM.SimplyRetsClient.SimplyRetsClient.html#149-165" title="Go to source code">getProperties</a>( <span><code><a href="class-NRM.SimplyRetsClient.PropertiesParameterSetInterface.html">NRM\SimplyRetsClient\PropertiesParameterSetInterface</a></code> <var>$parameters</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
-			<p>Get properties</p>
+			<p>Get property object array</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Get properties</p>
+			<p>Get property object array</p>
 
 
 				<h4>Parameters</h4>
@@ -296,7 +406,58 @@
 					<dd></dd>
 				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-NRM.SimplyRetsClient.Model.Listing.html">NRM\SimplyRetsClient\Model\Listing</a>[]</code>
+				</div>
 
+				<h4>Throws</h4>
+				<div class="list">
+					GuzzleHttp\Exception\GuzzleException<br>when request fails for any reason
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getRawProperties" id="_getRawProperties">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getRawProperties">#</a>
+		<code><a href="source-class-NRM.SimplyRetsClient.SimplyRetsClient.html#167-181" title="Go to source code">getRawProperties</a>( <span><code><a href="class-NRM.SimplyRetsClient.PropertiesParameterSetInterface.html">NRM\SimplyRetsClient\PropertiesParameterSetInterface</a></code> <var>$parameters</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Get raw properties JSON string</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get raw properties JSON string</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$parameters</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					GuzzleHttp\Exception\GuzzleException<br>when request fails for any reason
+				</div>
 
 
 
@@ -308,24 +469,28 @@
 		<td class="attributes"><code>
 			 public 
 
-			
+			JMS\Serializer\SerializerInterface
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getSerializer">#</a>
-		<code><a href="source-class-NRM.SimplyRetsClient.SimplyRetsClient.html#125-141" title="Go to source code">getSerializer</a>( )</code>
+		<code><a href="source-class-NRM.SimplyRetsClient.SimplyRetsClient.html#183-204" title="Go to source code">getSerializer</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Get or create JMS serializer</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Get or create JMS serializer</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					JMS\Serializer\SerializerInterface
+				</div>
 
 
 
@@ -345,7 +510,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_prepareRequest">#</a>
-		<code><a href="source-class-NRM.SimplyRetsClient.SimplyRetsClient.html#143-163" title="Go to source code">prepareRequest</a>( <span>string <var>$url</var></span>, <span><code><a href="class-NRM.SimplyRetsClient.ParameterSetInterface.html">NRM\SimplyRetsClient\ParameterSetInterface</a></code> <var>$parameters</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-NRM.SimplyRetsClient.SimplyRetsClient.html#206-226" title="Go to source code">prepareRequest</a>( <span>string <var>$url</var></span>, <span><code><a href="class-NRM.SimplyRetsClient.ParameterSetInterface.html">NRM\SimplyRetsClient\ParameterSetInterface</a></code> <var>$parameters</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Prepare request for sending</p>
@@ -389,7 +554,7 @@ to do it over and over.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getDefaultConfig">#</a>
-		<code><a href="source-class-NRM.SimplyRetsClient.SimplyRetsClient.html#165-180" title="Go to source code">getDefaultConfig</a>( )</code>
+		<code><a href="source-class-NRM.SimplyRetsClient.SimplyRetsClient.html#228-243" title="Go to source code">getDefaultConfig</a>( )</code>
 
 		<div class="description short">
 			<p>Get default client configuration</p>
