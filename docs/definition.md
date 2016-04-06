@@ -31,6 +31,13 @@ $definition = $client->getDefinition();
 // Do something with the definition
 ```
 
+Getting raw definition response
+-------------------------------
+
+Instead of calling `$client->getDefinition()` in the above example; you may call
+`$client->getRawDefinition()` which will return the raw JSON instead of parsing
+it into a `Definition` object.
+
 Using the definition object
 ---------------------------
 

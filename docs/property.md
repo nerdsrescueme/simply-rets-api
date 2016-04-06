@@ -30,6 +30,13 @@ $definition = $client->getProperty(12345);
 // Do something with the property
 ```
 
+Getting raw property response
+-----------------------------
+
+Instead of calling `$client->getProperty()` in the above example; you may call
+`$client->getRawProperty()` which will return the raw JSON instead of parsing
+it into a `Listing` object.
+
 Using the property object
 -------------------------
 
