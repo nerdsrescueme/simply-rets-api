@@ -32,4 +32,11 @@ class SetupTests extends ClientTestCase
         $this->assertAttributeSame(null, 'serializer', $client);
         $this->assertInstanceOf('JMS\Serializer\SerializerInterface', $client->getSerializer());
     }
+
+    public function testGuzzleClient()
+    {
+      $client = $this->createClient();
+
+      $this->assertInstanceOf('GuzzleHttp\Client', $client->getGuzzleClient());
+    }
 }
