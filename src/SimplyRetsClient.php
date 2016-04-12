@@ -110,7 +110,7 @@ class SimplyRetsClient
         try {
             $response = $this->client->request('OPTIONS', '/');
 
-            return $response->getBody();
+            return (string) $response->getBody();
         } catch (GuzzleException $e) {}
     }
 
@@ -147,7 +147,7 @@ class SimplyRetsClient
         list($url, $opts) = $this->prepareRequest(sprintf('/properties/%s', (string) $mlsId), $parameters);
         $response = $this->client->request('GET', $url, $opts);
 
-        return $response->getBody();
+        return (string) $response->getBody();
     }
 
     /**
@@ -181,7 +181,7 @@ class SimplyRetsClient
         list($url, $opts) = $this->prepareRequest('/properties', $parameters);
         $response = $this->client->request('GET', $url, $opts);
 
-        return $response->getBody();
+        return (string) $response->getBody();
     }
 
     /**
