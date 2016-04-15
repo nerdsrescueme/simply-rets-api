@@ -38,7 +38,7 @@ class ListingTests extends ClientTestCase
     {
       $client = $this->createClient($this->getHandledConfig(200));
       $raw = $client->getRawProperty(1);
-      $decoded = json_decode($raw);
+      $decoded = json_decode((string) $raw->getBody());
 
       $this->assertNotEmpty($raw);
       $this->assertNotFalse($decoded);

@@ -19,7 +19,7 @@ class DefinitionTests extends ClientTestCase
     {
       $client = $this->createDefinitionClient();
       $raw = $client->getRawDefinition();
-      $decoded = json_decode($raw);
+      $decoded = json_decode((string) $raw->getBody());
 
       $this->assertNotEmpty($raw);
       $this->assertNotFalse($decoded);
