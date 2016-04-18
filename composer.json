@@ -1,5 +1,5 @@
 {
-    "name": "nrm/simplyrets-client",
+    "name": "nrm/simply-rets-client",
     "description": "Simply RETS PHP client built with Guzzle",
     "keywords": ["rets", "simplyrets", "real estate"],
     "type": "library",
@@ -26,7 +26,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.1-dev"
+            "dev-master": "1.0-dev"
         }
     }
 }

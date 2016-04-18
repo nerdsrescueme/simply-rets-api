@@ -31,26 +31,18 @@ $definition = $client->getDefinition();
 // Do something with the definition
 ```
 
+Getting raw definition response
+-------------------------------
+
+Instead of calling `$client->getDefinition()` in the above example; you may call
+`$client->getRawDefinition()` which will return the raw JSON instead of parsing
+it into a `Definition` object.
+
 Using the definition object
 ---------------------------
 
-The definition object gives you access to the following methods:
-
-### getExpiresAt(): `DateTime`
-Returns the date, on which, the definition object will expire.
-
-### getVendors(): `array`
-Returns an array containing the vendors registered to your account. This is
-useful when working with multiple feeds at once.
-
-### getUpdates(): `array`
-Write doc.
-
-### getEndpoints(): `array`
-Write doc.
-
-### getAccepts(): `array`
-Write doc.
+The property object structure and hierarchy can be found in the API docs for
+the [Definition object](docs/api/class-NRM.SimplyRetsClient.Model.Definition.html).
 
 Caching the definition object
 -----------------------------

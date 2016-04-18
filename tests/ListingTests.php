@@ -34,6 +34,17 @@ class ListingTests extends ClientTestCase
         $this->assertInstanceOf('NRM\SimplyRetsClient\Model\Listing', $client->getProperty(1));
     }
 
+    public function testListingRawSuccessResponse()
+    {
+      $client = $this->createClient($this->getHandledConfig(200));
+      $raw = $client->getRawProperty(1);
+      $decoded = json_decode((string) $raw->getBody());
+
+      $this->assertNotEmpty($raw);
+      $this->assertNotFalse($decoded);
+      $this->assertSame(JSON_ERROR_NONE, json_last_error());
+    }
+
     /**
      * @expectedException GuzzleHttp\Exception\ClientException
      */

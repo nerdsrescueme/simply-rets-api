@@ -15,6 +15,28 @@ class DefinitionTests extends ClientTestCase
         $this->assertNull($client->getDefinition());
     }
 
+    public function testListingRawSuccessResponse()
+    {
+      $client = $this->createDefinitionClient();
+      $raw = $client->getRawDefinition();
+      $decoded = json_decode((string) $raw->getBody());
+
+      $this->assertNotEmpty($raw);
+      $this->assertNotFalse($decoded);
+      $this->assertSame(JSON_ERROR_NONE, json_last_error());
+    }
+
+    public function testListingRawResponseReturnsNullOnError()
+    {
+      $client = $this->createClient(array(
+          'handler' => $this->mockHandler(
+              $this->mockRequestException('Bad Request', 400, array(), 'Get body from API')
+          )
+      ));
+
+      $this->assertNull($client->getRawDefinition());
+    }
+
     public function testDefinitionReturnedWithBadCredentials()
     {
         $json = $this->getData('definition-bad-auth');
