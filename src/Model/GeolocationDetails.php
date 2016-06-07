@@ -39,4 +39,75 @@ class GeolocationDetails
     {
         return $this->directions;
     }
+
+    /**
+     * Set the value of Geolocation details model
+     *
+     * @param mixed county
+     *
+     * @return self
+     */
+    public function setCounty($county)
+    {
+        $this->county = $county;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Latitude
+     *
+     * @param mixed latitude
+     *
+     * @return self
+     */
+    public function setLatitude($latitude)
+    {
+        $this->latitude = $latitude;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Longitude
+     *
+     * @param mixed longitude
+     *
+     * @return self
+     */
+    public function setLongitude($longitude)
+    {
+        $this->longitude = $longitude;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Area
+     *
+     * @param mixed area
+     *
+     * @return self
+     */
+    public function setArea($area)
+    {
+        $this->area = $area;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Directions
+     *
+     * @param mixed directions
+     *
+     * @return self
+     */
+    public function setDirections($directions)
+    {
+        $this->directions = $directions;
+
+        return $this;
+    }
+
 }
