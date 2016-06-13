@@ -60,7 +60,7 @@ class SimplyRetsClient
         $serializerCacheDirectory = null,
         $debug = false
     ) {
-        $config = array_merge_recursive($this->getDefaultConfig(), $config);
+        $config = array_merge($this->getDefaultConfig(), $config);
         $config['auth'] = array($username, $password);
 
         if ($debug) {

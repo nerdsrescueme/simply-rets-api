@@ -48,4 +48,61 @@ class Agent
     {
         return isset($this->contact['full']) ? $this->contact['full'] : null;
     }
+
+    /**
+     * Set the value of Agent model
+     *
+     * @param mixed id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of First Name
+     *
+     * @param mixed firstName
+     *
+     * @return self
+     */
+    public function setFirstName($firstName)
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Last Name
+     *
+     * @param mixed lastName
+     *
+     * @return self
+     */
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Contact
+     *
+     * @param mixed contact
+     *
+     * @return self
+     */
+    public function setContact($contact)
+    {
+        $this->contact = $contact;
+
+        return $this;
+    }
+
 }
