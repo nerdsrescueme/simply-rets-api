@@ -63,7 +63,9 @@ class SimplyRetsClient
         $config = array_merge_recursive($this->getDefaultConfig(), $config);
         $config['auth'] = array($username, $password);
 
-        (count($config['base_uri']) > 1) ? unset($config['base_uri'][1]) : null;
+        if(count($config['base_uri']) > 1) {
+            unset($config['base_uri'][1]);
+        }
 
         if ($debug) {
             $config['debug'] = true;
