@@ -272,4 +272,551 @@ class PropertyDetails
     {
         return $this->garageSpaceCount;
     }
+
+    /**
+     * Set the value of Property details model
+     *
+     * @param mixed roofType
+     *
+     * @return self
+     */
+    public function setRoofType($roofType)
+    {
+        $this->roofType = $roofType;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Cooling Type
+     *
+     * @param mixed coolingType
+     *
+     * @return self
+     */
+    public function setCoolingType($coolingType)
+    {
+        $this->coolingType = $coolingType;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Style
+     *
+     * @param mixed style
+     *
+     * @return self
+     */
+    public function setStyle($style)
+    {
+        $this->style = $style;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Area
+     *
+     * @param mixed area
+     *
+     * @return self
+     */
+    public function setArea($area)
+    {
+        $this->area = $area;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Full Bath Count
+     *
+     * @param mixed fullBathCount
+     *
+     * @return self
+     */
+    public function setFullBathCount($fullBathCount)
+    {
+        $this->fullBathCount = $fullBathCount;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Half Bath Count
+     *
+     * @param mixed halfBathCount
+     *
+     * @return self
+     */
+    public function setHalfBathCount($halfBathCount)
+    {
+        $this->halfBathCount = $halfBathCount;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Story Count
+     *
+     * @param mixed storyCount
+     *
+     * @return self
+     */
+    public function setStoryCount($storyCount)
+    {
+        $this->storyCount = $storyCount;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Fireplace Count
+     *
+     * @param mixed fireplaceCount
+     *
+     * @return self
+     */
+    public function setFireplaceCount($fireplaceCount)
+    {
+        $this->fireplaceCount = $fireplaceCount;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Flooring
+     *
+     * @param mixed flooring
+     *
+     * @return self
+     */
+    public function setFlooring($flooring)
+    {
+        $this->flooring = $flooring;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Heating
+     *
+     * @param mixed heating
+     *
+     * @return self
+     */
+    public function setHeating($heating)
+    {
+        $this->heating = $heating;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Bathroom Count
+     *
+     * @param mixed bathroomCount
+     *
+     * @return self
+     */
+    public function setBathroomCount($bathroomCount)
+    {
+        $this->bathroomCount = $bathroomCount;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Foundation Type
+     *
+     * @param mixed foundationType
+     *
+     * @return self
+     */
+    public function setFoundationType($foundationType)
+    {
+        $this->foundationType = $foundationType;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Laundry Features
+     *
+     * @param mixed laundryFeatures
+     *
+     * @return self
+     */
+    public function setLaundryFeatures($laundryFeatures)
+    {
+        $this->laundryFeatures = $laundryFeatures;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Occupant Name
+     *
+     * @param mixed occupantName
+     *
+     * @return self
+     */
+    public function setOccupantName($occupantName)
+    {
+        $this->occupantName = $occupantName;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Lot Description
+     *
+     * @param mixed lotDescription
+     *
+     * @return self
+     */
+    public function setLotDescription($lotDescription)
+    {
+        $this->lotDescription = $lotDescription;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Sub Type
+     *
+     * @param mixed subType
+     *
+     * @return self
+     */
+    public function setSubType($subType)
+    {
+        $this->subType = $subType;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Bedroom Count
+     *
+     * @param mixed bedroomCount
+     *
+     * @return self
+     */
+    public function setBedroomCount($bedroomCount)
+    {
+        $this->bedroomCount = $bedroomCount;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Interior Features
+     *
+     * @param mixed interiorFeatures
+     *
+     * @return self
+     */
+    public function setInteriorFeatures($interiorFeatures)
+    {
+        $this->interiorFeatures = $interiorFeatures;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Lot Size
+     *
+     * @param mixed lotSize
+     *
+     * @return self
+     */
+    public function setLotSize($lotSize)
+    {
+        $this->lotSize = $lotSize;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Area Source
+     *
+     * @param mixed areaSource
+     *
+     * @return self
+     */
+    public function setAreaSource($areaSource)
+    {
+        $this->areaSource = $areaSource;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Additional Rooms
+     *
+     * @param mixed additionalRooms
+     *
+     * @return self
+     */
+    public function setAdditionalRooms($additionalRooms)
+    {
+        $this->additionalRooms = $additionalRooms;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Exterior Features
+     *
+     * @param mixed exteriorFeatures
+     *
+     * @return self
+     */
+    public function setExteriorFeatures($exteriorFeatures)
+    {
+        $this->exteriorFeatures = $exteriorFeatures;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Water Source
+     *
+     * @param mixed waterSource
+     *
+     * @return self
+     */
+    public function setWaterSource($waterSource)
+    {
+        $this->waterSource = $waterSource;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of View
+     *
+     * @param mixed view
+     *
+     * @return self
+     */
+    public function setView($view)
+    {
+        $this->view = $view;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Subdivision
+     *
+     * @param mixed subdivision
+     *
+     * @return self
+     */
+    public function setSubdivision($subdivision)
+    {
+        $this->subdivision = $subdivision;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Construction Types
+     *
+     * @param mixed constructionTypes
+     *
+     * @return self
+     */
+    public function setConstructionTypes($constructionTypes)
+    {
+        $this->constructionTypes = $constructionTypes;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Type
+     *
+     * @param mixed type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Accessibility
+     *
+     * @param mixed accessibility
+     *
+     * @return self
+     */
+    public function setAccessibility($accessibility)
+    {
+        $this->accessibility = $accessibility;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Occupant Type
+     *
+     * @param mixed occupantType
+     *
+     * @return self
+     */
+    public function setOccupantType($occupantType)
+    {
+        $this->occupantType = $occupantType;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Year Built
+     *
+     * @param mixed yearBuilt
+     *
+     * @return self
+     */
+    public function setYearBuilt($yearBuilt)
+    {
+        $this->yearBuilt = $yearBuilt;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Association
+     *
+     * @param mixed association
+     *
+     * @return self
+     */
+    public function setAssociation($association)
+    {
+        $this->association = $association;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Agreement
+     *
+     * @param mixed agreement
+     *
+     * @return self
+     */
+    public function setAgreement($agreement)
+    {
+        $this->agreement = $agreement;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Garage Space Count
+     *
+     * @param mixed garageSpaceCount
+     *
+     * @return self
+     */
+    public function setGarageSpaceCount($garageSpaceCount)
+    {
+        $this->garageSpaceCount = $garageSpaceCount;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Maintenance Expense
+     *
+     * @param mixed maintenanceExpense
+     *
+     * @return self
+     */
+    public function setMaintenanceExpense($maintenanceExpense)
+    {
+        $this->maintenanceExpense = $maintenanceExpense;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Parking
+     *
+     * @param mixed parking
+     *
+     * @return self
+     */
+    public function setParking($parking)
+    {
+        $this->parking = $parking;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Pool
+     *
+     * @param mixed pool
+     *
+     * @return self
+     */
+    public function setPool($pool)
+    {
+        $this->pool = $pool;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Rooms
+     *
+     * @param mixed rooms
+     *
+     * @return self
+     */
+    public function setRooms($rooms)
+    {
+        $this->rooms = $rooms;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Tax Year
+     *
+     * @param mixed taxYear
+     *
+     * @return self
+     */
+    public function setTaxYear($taxYear)
+    {
+        $this->taxYear = $taxYear;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of Tax Annual Amount
+     *
+     * @param mixed taxAnnualAmount
+     *
+     * @return self
+     */
+    public function setTaxAnnualAmount($taxAnnualAmount)
+    {
+        $this->taxAnnualAmount = $taxAnnualAmount;
+
+        return $this;
+    }
+
 }

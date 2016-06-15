@@ -63,6 +63,10 @@ class SimplyRetsClient
         $config = array_merge_recursive($this->getDefaultConfig(), $config);
         $config['auth'] = array($username, $password);
 
+        if(count($config['base_uri']) > 1) {
+            $config['base_uri'] = $config['base_uri'][1];
+        }
+
         if ($debug) {
             $config['debug'] = true;
         }
@@ -237,7 +241,7 @@ class SimplyRetsClient
     protected function getDefaultConfig()
     {
         return array(
-            'base_uri' => 'https://api.simplyrets.com',
+            'base_uri' => 'https://api.simplyrets.com/',
             'connect_timeout' => 2,
             'timeout' => 4,
             'headers' => array(
