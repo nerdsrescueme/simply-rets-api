@@ -4,6 +4,7 @@
     <property name="privateRemarks" serialized-name="privateRemarks" type="string" expose="true" />
     <property name="propertyDetails" serialized-name="property" type="NRM\SimplyRetsClient\Model\PropertyDetails" expose="true" />
     <property name="mlsId" serialized-name="mlsId" type="integer" expose="true" />
+    <property name="address" serialized-name="address" type="NRM\SimplyRetsClient\Model\Address" expose="true" />
     <property name="mlsDetails" serialized-name="mls" type="NRM\SimplyRetsClient\Model\MlsDetails" expose="true" />
     <property name="geolocationDetails" serialized-name="geo" type="NRM\SimplyRetsClient\Model\GeolocationDetails" expose="true" />
     <property name="terms" serialized-name="terms" type="string" expose="true" />

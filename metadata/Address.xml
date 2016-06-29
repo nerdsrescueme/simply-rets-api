@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+  <class name="NRM\SimplyRetsClient\Model\Address" exclusion-policy="ALL">
+    <property name="country" serialized-name="country" type="string" expose="true" />
+    <property name="street" serialized-name="full" type="string" expose="true" />
+    <property name="city" serialized-name="city" type="string" expose="true" />
+    <property name="state" serialized-name="state" type="string" expose="true" />
+    <property name="country" serialized-name="country" type="string" expose="true" />
+    <property name="zip" serialized-name="postalCode" type="string" expose="true" />
+    <property name="crossStreet" serialized-name="crossStreet" type="string" expose="true" />
+    <property name="streetName" serialized-name="streetName" type="string" expose="true" />
+    <property name="streetNumber" serialized-name="streetNumber" type="integer" expose="true" />
+    <property name="unit" serialized-name="unit" type="string" expose="true" />
+  </class>
+</serializer>
