@@ -19,7 +19,7 @@ abstract class ClientTestCase extends PHPUnit_Framework_TestCase
      * @param boolean $debug
      * @return SimplyRetsCient
      */
-    public function createClient(array $config = array(), $serializerCacheDirectory = null, $debug = false)
+    public function createClient(array $config = array(), $serializerCacheDirectory = null, $debug = true)
     {
         return new SimplyRetsClient(
             SIMPLYRETS_USERNAME,

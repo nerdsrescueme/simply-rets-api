@@ -12,6 +12,7 @@ use DateTime;
 class Listing
 {
     protected $mlsId;
+    protected $address;
     protected $propertyDetails;
     protected $mlsDetails;
     protected $geolocationDetails;
@@ -32,6 +33,11 @@ class Listing
     public function __construct()
     {
         $this->photos = array();
+    }
+
+    public function getAddress()
+    {
+        return $this->address;
     }
 
     public function getMlsId()
@@ -134,6 +140,20 @@ class Listing
     }
 
     /**
+     * Set the value of address
+     *
+     * @param mixed $address
+     *
+     * @return self
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
      * Set the value of Property Details
      *
      * @param mixed propertyDetails
@@ -162,7 +182,7 @@ class Listing
     }
 
     /**
-     * Set the value of Geolocation Details 
+     * Set the value of Geolocation Details
      *
      * @param mixed geolocationDetails
      *
