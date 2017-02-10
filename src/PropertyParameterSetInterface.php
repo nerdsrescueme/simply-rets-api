@@ -37,4 +37,19 @@ interface PropertyParameterSetInterface extends ParameterSetInterface
      * @return array
      */
     public function getExtraFields();
+
+    /**
+     * Set vendor.
+     *
+     * @param string $vendor
+     * @return self
+     */
+    public function setVendor($vendor);
+
+    /**
+     * Get vendor
+     *
+     * @return string|null
+     */
+    public function getVendor();
 }

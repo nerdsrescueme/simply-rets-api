@@ -202,6 +202,11 @@ class ListingTests extends ClientTestCase
         $this->assertDeserializationMatch('remarks', 'getRemarks');
     }
 
+    public function testListingDeserializationSetsListingId()
+    {
+        $this->assertDeserializationMatch('listingId', 'getListingId');
+    }
+
     private function assertDeserializationMatch($jsonAttribute, $objectGetter = null)
     {
         $this->assertSame(

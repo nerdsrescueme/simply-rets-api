@@ -10,6 +10,7 @@ namespace NRM\SimplyRetsClient;
 class PropertyParameterSet extends AbstractParameterSet implements PropertyParameterSetInterface
 {
     protected $extraFields = array();
+    protected $vendor;
 
     /**
      * {@inheritdoc}
@@ -49,12 +50,34 @@ class PropertyParameterSet extends AbstractParameterSet implements PropertyParam
     /**
      * {@inheritdoc}
      */
+    public function setVendor($vendor)
+    {
+        $this->vendor = $vendor;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getVendor()
+    {
+        return $this->vendor;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function toArray()
     {
         $array = array();
 
         if (!empty($this->extraFields)) {
             $array['include'] = $this->extraFields;
+        }
+
+        if (!empty($this->vendor)) {
+            $array['vendor'] = $this->vendor;
         }
 
         return $array;
