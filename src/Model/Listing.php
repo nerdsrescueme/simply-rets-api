@@ -29,6 +29,7 @@ class Listing
     protected $leaseType;
     protected $privateRemarks;
     protected $remarks;
+    protected $listingId;
 
     public function __construct()
     {
@@ -123,6 +124,11 @@ class Listing
     public function getRemarks()
     {
         return $this->remarks;
+    }
+
+    public function getListingId()
+    {
+        return $this->listingId;
     }
 
     /**
@@ -377,4 +383,10 @@ class Listing
         return $this;
     }
 
+    public function setListingId($listingId)
+    {
+        $this->listingId = $listingId;
+
+        return $this;
+    }
 }

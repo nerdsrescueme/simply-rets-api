@@ -19,5 +19,6 @@
     <property name="listPrice" serialized-name="listPrice" type="integer" expose="true" />
     <property name="leaseType" serialized-name="leaseType" type="string" expose="true" />
     <property name="remarks" serialized-name="remarks" type="string" expose="true" />
+    <property name="listingId" serialized-name="listingId" type="string" expose="true" />
   </class>
 </serializer>
